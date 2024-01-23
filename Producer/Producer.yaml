@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer-script
+  #namespace: mqtt
+  labels:
+    app: producer-script
+spec:
+  selector:
+    matchLabels:
+      app: producer-script
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: producer-script
+    spec:
+      containers:
+      - name: producer-script
+        image: mohawkiotlab/producer-script:1.0
+        imagePullPolicy: Always

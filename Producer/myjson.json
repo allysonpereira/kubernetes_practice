@@ -1,0 +1,7 @@
+{  
+    
+    "broker_address": "10.1.103.32",  
+    "port": 1883, 
+    "topic": "test/topic"
+    
+}

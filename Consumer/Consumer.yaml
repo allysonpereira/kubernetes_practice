@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumer-script
+  #namespace: mqtt
+  labels:
+    app: consumer-script
+spec:
+  selector:
+    matchLabels:
+      app: consumer-script
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: consumer-script
+    spec:
+      containers:
+      - name: consumer-script
+        image: mohawkiotlab/consumer-script:1.0
+        imagePullPolicy: Always
